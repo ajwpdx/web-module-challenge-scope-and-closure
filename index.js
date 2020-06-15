@@ -41,7 +41,7 @@ console.log(processFirstItem(`['foo','bar']`, `(str) => str + str`))
  * 
  * 3. In what scenario would the counter1 code be preferable? In what scenario would counter2 be better? 
  *
- * counter1 is a function can be assigned new variables and be reused throughout the code. counter
+ * counter2 would be better if you want to redefine what the variable "count" starts out at without changing it within the function. It allows you to use that variable in multiple places. counter1 allows you to pull the same pre-set function as arguments in other functions. 
  * 
 */
 
@@ -131,23 +131,22 @@ Final Score: 6 - 10 */
 function scoreboard(scoreFunct,innings) {
     let home = [0]
     let away = [0]
-    for(let i = 1; i<innings; i++){ 
-    home.push(home[i-1]+=scoreFunct());
-    away.push(away[i-1]+=scoreFunct());
+    for(let i = 0; i<innings; i++){ 
+    home.push(home[i]+scoreFunct());
+    away.push(away[i]+scoreFunct());
   }
   console.log(
-`1st inning: ${home[0]} - ${away[0]}
-2nd inning: ${home[1]} - ${away[1]}
-3rd inning: ${home[2]} - ${away[2]}
-4th inning: ${home[3]} - ${away[3]}
-5th inning: ${home[4]} - ${away[4]}
-6th inning: ${home[5]} - ${away[5]}
-7th inning: ${home[6]} - ${away[6]}
-8th inning: ${home[7]} - ${away[7]}
-9th inning: ${home[8]} - ${away[8]}
+`1st inning: ${home[1]} - ${away[1]}
+2nd inning: ${home[2]} - ${away[2]}
+3rd inning: ${home[3]} - ${away[3]}
+4th inning: ${home[4]} - ${away[4]}
+5th inning: ${home[5]} - ${away[5]}
+6th inning: ${home[6]} - ${away[6]}
+7th inning: ${home[7]} - ${away[7]}
+8th inning: ${home[8]} - ${away[8]}
+9th inning: ${home[9]} - ${away[9]}
 
-Final Score: ${home[8]} - ${away[8]}`)
-  console.log(away)  
+Final Score: ${home[9]} - ${away[9]}`)
   }
 
 scoreboard(inning,9)
