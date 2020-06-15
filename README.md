@@ -42,6 +42,9 @@ Find the file `index.js` and complete the tasks.
 Edit the `ReadMe` file with your answers.
 
 1. In your own words, define closure (1-2 sentences).
+
+Closure is an intermediate scope between local scope and global scope. It occurs whenever you have a function within another function
+
 2. Study the following code, then answer the questions below.
 
 ```js
@@ -63,8 +66,11 @@ dansRoll();
 ```
 
 a. Where is closure used in this code? How can you tell?
+  The use of the function within the function means that a closure exists for the contained function. 
 b. Compare and contrast calling `dansRoll` the first and second time. What is always the same? What could change?
+  The name "Dan" will always be the same, but the number may change because a random number is used and the function gets called again. 
 c. What is the lexical scope of `newRoll`? 
+  newRoll has access to its parent container which is personalDice as well as the global scope. 
 
 ### Task 2c - Exit Ticket
 
